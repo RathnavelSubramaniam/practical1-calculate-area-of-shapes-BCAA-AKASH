@@ -1,0 +1,36 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: practical1
+      id: practical1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: practical1
+        setup-command: javac practical1.java
+        command: java practical1
+        input: ''
+        expected-output: |-
+          Area of trapezoid=12.0
+          Area of rectangle=12.0
+          Area of square=9.0
+        comparison-method: contains
+        timeout: 10
+        max-score: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        PRACTICAL1_RESULTS: "${{steps.practical1.outputs.result}}"
+      with:
+        runners: practical1
