@@ -78,6 +78,5 @@ class Square extends Rectangle{
             System.out.println("Area of trapezoid="+trapezoid.calculateArea());
             System.out.println("Area of rectangle="+rectangle.calculateArea());
             System.out.println("Area of square="+square.calculateArea());
-
         }
     }
