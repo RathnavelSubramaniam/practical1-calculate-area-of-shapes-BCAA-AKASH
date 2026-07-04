@@ -29,7 +29,6 @@ this.point2 = p2;
 this.point3 = p3;
 this.point4 = p4;
 }
-// No area calculation for Quadrilateral due to its general nature
 }
 // Step 1: Define the Trapezoid class as a subclass of Quadrilateral
 class Trapezoid extends Quadrilateral
