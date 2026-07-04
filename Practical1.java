@@ -66,7 +66,7 @@ class Square extends Rectangle{
         return sideLength * sideLength;
     }
 }
-    class Practical1{
+    class practical1{
         public static void main(String[] args){
             Point p1 = new Point(0,0);
             Point p2 = new Point(4,0);
@@ -78,5 +78,6 @@ class Square extends Rectangle{
             System.out.println("Area of trapezoid="+trapezoid.calculateArea());
             System.out.println("Area of rectangle="+rectangle.calculateArea());
             System.out.println("Area of square="+square.calculateArea());
+
         }
     }
